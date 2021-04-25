@@ -42,9 +42,12 @@ phoneNumbers = []
 for number in phoneExtracts:
     phoneNumbers.append(number[0])
 
-#  Copy extracted phone number and email to clipboard
 emailExtracts = emailRegex.findall(text)
 
 print(phoneNumbers)
+print(emailExtracts)
 
-# print(emailExtracts)
+#  Copy extracted phone number and email to clipboard
+
+results = "\n".join(phoneNumbers) + "\n".join(emailExtracts)
+pyperclip.copy(results)
