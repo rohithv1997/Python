@@ -1,0 +1,15 @@
+from selenium import webdriver
+
+browser = webdriver.Firefox()
+browser.get('https://wikipedia.org')
+element = browser.find_element_by_css_selector('#js-link-box-en > strong')
+element.click()
+search = browser.find_element_by_css_selector('#searchInput')
+search.send_keys('The office (American TV Series)')
+searchClick = browser.find_element_by_css_selector('#searchButton')
+searchClick.click()
+link = browser.find_element_by_css_selector('li.toclevel-1:nth-child(3) > a:nth-child(1)')
+link.click()
+synposes = browser.find_element_by_css_selector('.mw-parser-output > p:nth-child(43)')
+print(synposes.text)
+browser.quit()
