@@ -1,6 +1,7 @@
 import openpyxl, os
 
-workbook = openpyxl.load_workbook(os.getcwd() + "/AutomateTasks/example.xlsx")
+#open the file from AutomateTasks folder
+workbook = openpyxl.load_workbook(os.getcwd() + "/example.xlsx")
 print(workbook.get_sheet_names())
 sheet = workbook["Sheet1"]
 cell = sheet["A1"]
